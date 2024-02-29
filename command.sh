@@ -36,4 +36,4 @@ sudo nginx -t && sudo systemctl restart nginx
 
 
 sudo systemctl status emaktab_beat
-sudo systemctl status emaktab_beat
+sudo systemctl status emaktab_worker
