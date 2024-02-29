@@ -1,0 +1,11 @@
+
+Django
+ipython
+requests
+django-environ
+gunicorn
+django-celery-results
+redis
+django-celery-beat
+django-redis
+
