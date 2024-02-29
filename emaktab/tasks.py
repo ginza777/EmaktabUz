@@ -16,7 +16,7 @@ def post_req():
     # time.sleep(10)
     users=UserData.objects.all()
     print("users..",users)
-    for user in UserData.objects.all():
+    for user in users:
         try:
             response=auto_post(user.login,user.password)
             if response:

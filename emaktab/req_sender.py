@@ -2,6 +2,8 @@ import uuid
 
 import requests
 
+from emaktab.log_chat import send_msg_log
+
 
 def auto_post(user_login,user_pass):
     url = "https://login.emaktab.uz/login"
@@ -17,8 +19,11 @@ def auto_post(user_login,user_pass):
     }
     response = requests.post(url, data=data)
     if response.status_code == 200:
+        send_msg_log("So'rov muvaffaqiyatli jo'natildi.")
         print("So'rov muvaffaqiyatli jo'natildi.")
+
         return True
     else:
+        send_msg_log(f"Xatolik yuz berdi:{ response.status_code}")
         print("Xatolik yuz berdi:", response.status_code)
         return False
