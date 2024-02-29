@@ -7,9 +7,9 @@ git pull
 sudo systemctl daemon-reload
 
 # Celery xizmatini qayta boshlash
-sudo systemctl enable emaktab_beat
-sudo systemctl start emaktab_beat
-sudo systemctl restart emaktab_beat
+sudo systemctl enable emaktab_worker
+sudo systemctl start emaktab_worker
+sudo systemctl restart emaktab_worker
 
 
 
