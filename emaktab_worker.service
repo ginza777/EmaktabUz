@@ -1,0 +1,13 @@
+[Unit]
+Description=Celery EmaktabUz Worker
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/projects/emaktabuz/EmaktabUz
+ExecStart=/bin/bash -c '/var/projects/emaktabuz/env/bin/celery -A EmaktabUz worker --loglevel=info '
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

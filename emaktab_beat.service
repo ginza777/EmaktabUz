@@ -1,0 +1,13 @@
+[Unit]
+Description=Celery EmaktabUz Beat Scheduler
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/projects/emaktabuz/EmaktabUz
+ExecStart=/bin/bash -c '/var/projects/emaktabuz/env/bin/celery -A EmaktabUz beat --loglevel=info --scheduler django_celery_beat.schedulers:DatabaseScheduler'
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
