@@ -8,7 +8,7 @@ from emaktab.models import UserData
 from emaktab.req_sender import auto_post
 
 
-app = Celery('task', broker='redis://localhost:6379/0')
+app = Celery('task', broker='redis://localhost:6380/0')
 
 
 @shared_task

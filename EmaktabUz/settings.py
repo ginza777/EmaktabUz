@@ -124,7 +124,7 @@ USE_TZ = True
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/0",
+        "LOCATION": "redis://127.0.0.1:6380/0",
     },
 }
 
@@ -151,10 +151,10 @@ CELERY_BEAT_SCHEDULE = {
     },
 
 }
-REDIS_URL="redis://localhost:6379/0"
-CELERY_BROKER_URL="redis://localhost:6379"
-BROKER_URL = "redis://localhost:6379"
-CELERY_RESULT_BACKEND = "redis://localhost:6379"
+REDIS_URL="redis://localhost:6380/0"
+CELERY_BROKER_URL="redis://localhost:6380"
+BROKER_URL = "redis://localhost:6380"
+CELERY_RESULT_BACKEND = "redis://localhost:6380"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_ACCEPT_CONTENT = ["application/json"]
