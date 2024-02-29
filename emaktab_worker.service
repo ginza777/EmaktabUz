@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/var/projects/emaktabuz/EmaktabUz
-ExecStart=/bin/bash -c '/var/projects/emaktabuz/env/bin/celery -A EmaktabUz worker --loglevel=info '
+ExecStart=/bin/bash -c '/var/projects/emaktabuz/env/bin/celery -A EmaktabUz worker  -Q emaktab_queue --loglevel=info '
 Restart=always
 User=root
 

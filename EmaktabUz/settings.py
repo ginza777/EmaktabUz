@@ -155,13 +155,13 @@ CELERY_BEAT_SCHEDULE = {
 }
 
 CELERY_QUEUES = {
-    'emaktab_quee': {
-        'exchange': 'emaktab_quee',
-        'routing_key': 'emaktab_quee.*',
+    'emaktab_queue': {
+        'exchange': 'emaktab_queue',
+        'routing_key': 'emaktab_queue.*',
     },
 
 }
-CELERY_DEFAULT_QUEUE = 'emaktab_quee'
+CELERY_DEFAULT_QUEUE = 'emaktab_queue'
 REDIS_URL="redis://localhost:6379/0"
 CELERY_BROKER_URL="redis://localhost:6379"
 BROKER_URL = "redis://localhost:6379"
