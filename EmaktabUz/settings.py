@@ -147,7 +147,7 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_BEAT_SCHEDULE = {
     'emaktab_task': {
         'task': 'emaktab.tasks.post_req',
-        'schedule': crontab(hour=8)
+        'schedule': timedelta(seconds=5),
     },
 
 }
