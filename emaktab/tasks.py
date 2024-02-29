@@ -12,7 +12,7 @@ app = Celery('task', broker='redis://localhost:6379/0')
 
 
 @shared_task
-def post_req():
+def post_req(bind=True,quee="emaktab_quee"):
     # time.sleep(10)
     users=UserData.objects.all()
     print("users..",users)

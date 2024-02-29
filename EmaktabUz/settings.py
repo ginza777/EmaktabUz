@@ -121,12 +121,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/0",
-    },
-}
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -140,6 +135,13 @@ MEDIA_ROOT = BASE_DIR / "media"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/0",
+    },
+}
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
@@ -151,6 +153,15 @@ CELERY_BEAT_SCHEDULE = {
     },
 
 }
+
+CELERY_QUEUES = {
+    'emaktab_quee': {
+        'exchange': 'emaktab_quee',
+        'routing_key': 'emaktab_quee.*',
+    },
+
+}
+CELERY_DEFAULT_QUEUE = 'emaktab_quee'
 REDIS_URL="redis://localhost:6379/0"
 CELERY_BROKER_URL="redis://localhost:6379"
 BROKER_URL = "redis://localhost:6379"
