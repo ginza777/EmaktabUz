@@ -90,13 +90,17 @@ sudo nano /etc/nginx/sites-available/emaktab.sherzamon.cloud
 sudo nginx -t
 sudo systemctl reload nginx
 sudo certbot --nginx -d emaktab.sherzamon.cloud
+sudo python3.10 /usr/local/bin/certbot --nginx -d emaktab.sherzamon.cloud
+sudo certbot --nginx -d emaktab.sherzamon.cloud --rsa-key-size 2048
+sudo certbot --nginx -d emaktab.sherzamon.cloud --rsa-key-size 2048
+
 sudo systemctl status certbot.timer
 sudo certbot renew --dry-run
 
 
 
 sudo nano /etc/systemd/system/emaktab_beat.service
-sudo nano /etc/systemd/system/emaktab_worker.service
+sudo nano /etc/systemd/system/emaktab_beat.service
 
 
 celery -A  EmaktabUz beat --loglevel=info  --scheduler django_celery_beat.schedulers:DatabaseScheduler
